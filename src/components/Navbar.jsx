@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-3">
-            <img src="/logo.png" alt="VCODE" className="h-9 w-9 object-cover object-top" />
+            <img src="/logo.png" alt="VCODE" width="36" height="36" className="h-9 w-9 object-cover object-top" />
             <div className="flex flex-col leading-none">
               <span className="font-display font-extrabold text-xl tracking-wider text-white">
                 VCODE
@@ -69,7 +69,9 @@ export default function Navbar() {
           {/* Contact Button */}
           <div className="hidden md:block">
             <a
-              href="#contact"
+              href="https://wa.me/919526952708"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-blue-600 to-cyan-500 text-white hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-800 transition-all duration-300"
             >
               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#020817] rounded-full group-hover:bg-opacity-0 flex items-center space-x-1">
@@ -111,7 +113,9 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="https://wa.me/919526952708"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="w-full text-center py-3 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium shadow-lg shadow-cyan-500/20 hover:opacity-90 transition-opacity flex items-center justify-center space-x-1"
               >

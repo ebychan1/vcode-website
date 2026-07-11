@@ -77,6 +77,8 @@ export default function Trust() {
               <img
                 src={item.img}
                 alt={item.name}
+                width="144"
+                height="64"
                 className="h-full w-full object-contain filter brightness-95 opacity-80 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-300 rounded"
               />
             </div>

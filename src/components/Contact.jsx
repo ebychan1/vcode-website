@@ -31,12 +31,34 @@ export default function Contact() {
     setError('');
     setIsSubmitting(true);
 
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 1500);
+    fetch('https://formsubmit.co/ajax/contact@vcode.in', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        _subject: `New Lead from VCODE Website: ${formData.name}`
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        setIsSubmitting(false);
+        if (data.success === 'true' || data.success) {
+          setSubmitted(true);
+          setFormData({ name: '', email: '', phone: '', message: '' });
+        } else {
+          setError('Submission failed. Please try again or email us directly.');
+        }
+      })
+      .catch(err => {
+        setIsSubmitting(false);
+        setError('An error occurred. Please try again or email us directly.');
+      });
   };
 
   return (

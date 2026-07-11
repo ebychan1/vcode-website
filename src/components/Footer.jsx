@@ -15,7 +15,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-6">
             <a href="#home" className="flex items-center space-x-3">
-              <img src="/logo.png" alt="VCODE" className="h-9 w-9 object-cover object-top" />
+              <img src="/logo.png" alt="VCODE" width="36" height="36" className="h-9 w-9 object-cover object-top" />
               <div className="flex flex-col leading-none">
                 <span className="font-display font-extrabold text-xl tracking-wider text-white">
                   VCODE
