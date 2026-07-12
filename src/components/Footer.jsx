@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
             </a>
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              VCODE TECHNOLOGIES builds intelligent digital ecosystems with AI marketing, SEO, GEO, automation, and modern web solutions to grow businesses across the globe.
+              VCODE TECHNOLOGIES is a premium AI-powered digital marketing & growth agency scaling search visibility and automation for brands in Kerala (Kochi & Ernakulam), India, and the UAE.
             </p>
             <div className="text-xs font-semibold text-cyan-400">
               Digital Growth • AI Marketing • Technology Solutions
@@ -79,17 +79,17 @@ export default function Footer() {
             <h4 className="text-sm font-bold text-white uppercase tracking-wider">Connect</h4>
             <div className="flex space-x-3">
               {[
-                { Icon: Linkedin, href: '#' },
-                { Icon: Twitter, href: '#' },
-                { Icon: Instagram, href: '#' },
-                { Icon: Facebook, href: '#' },
-                { Icon: Github, href: '#' }
+                { Icon: Linkedin, href: 'https://in.linkedin.com/company/vcodetechnologies' },
+                { Icon: Instagram, href: 'https://www.instagram.com/vcode_technologies/?hl=en' },
+                { Icon: Facebook, href: 'https://www.facebook.com/vcodetech/' }
               ].map((social, idx) => {
                 const IconComp = social.Icon;
                 return (
                   <a
                     key={idx}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="h-10 w-10 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/30 hover:bg-white/[0.04] transition-all"
                   >
                     <IconComp className="w-5 h-5" />
