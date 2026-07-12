@@ -9,6 +9,7 @@ import CaseStudies from './components/CaseStudies';
 import Process from './components/Process';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import GeminiBot from './components/GeminiBot';
 
 // Lazy load sub-pages for optimal page speed performance
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
@@ -110,6 +111,9 @@ export default function App() {
 
       {/* Footer Section */}
       <Footer />
+
+      {/* Floating Gemini AI Bot Widget */}
+      <GeminiBot />
     </div>
   );
 }
