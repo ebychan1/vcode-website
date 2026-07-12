@@ -129,10 +129,10 @@ export default function GeminiBot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-            className="fixed bottom-24 left-6 z-50 w-[340px] sm:w-[380px] h-[500px] glass-panel rounded-3xl border border-white/10 shadow-2xl flex flex-col overflow-hidden text-left"
+            className="fixed bottom-24 left-6 z-50 w-[340px] sm:w-[380px] h-[500px] bg-[#0b1329] rounded-3xl border border-white/10 shadow-2xl flex flex-col overflow-hidden text-left"
           >
             {/* Chat Header */}
-            <div className="p-4 bg-gradient-to-r from-blue-950/80 to-indigo-950/80 border-b border-white/5 flex items-center justify-between">
+            <div className="p-4 bg-gradient-to-r from-blue-950 to-indigo-950 border-b border-white/5 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center border border-cyan-400/20">
                   <Bot className="w-5 h-5 text-white" />
@@ -156,7 +156,7 @@ export default function GeminiBot() {
             </div>
 
             {/* Chat Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 min-h-0 custom-scrollbar bg-navy/20">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 min-h-0 custom-scrollbar bg-[#020817]/40">
               {messages.map((msg, index) => (
                 <div
                   key={index}
@@ -165,12 +165,12 @@ export default function GeminiBot() {
                   <div
                     className={`max-w-[80%] rounded-2xl p-3.5 text-sm ${
                       msg.sender === 'user'
-                        ? 'bg-blue-600 text-white rounded-tr-none'
-                        : 'bg-white/[0.04] border border-white/5 text-slate-200 rounded-tl-none'
+                        ? 'bg-blue-600 text-white rounded-tr-none shadow-md'
+                        : 'bg-slate-800 border border-white/10 text-slate-100 rounded-tl-none shadow-md'
                     }`}
                   >
                     <p className="leading-relaxed font-normal">{msg.text}</p>
-                    <span className="block text-[9px] text-slate-500 text-right mt-1.5 font-medium">
+                    <span className="block text-[9px] text-slate-400 text-right mt-1.5 font-medium">
                       {msg.time}
                     </span>
                   </div>
@@ -179,8 +179,8 @@ export default function GeminiBot() {
 
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="bg-white/[0.04] border border-white/5 text-slate-300 rounded-2xl rounded-tl-none p-3.5 flex items-center space-x-1.5">
-                    <span className="text-xs text-slate-500 font-medium">Gemini is analyzing</span>
+                  <div className="bg-slate-800 border border-white/10 text-slate-200 rounded-2xl rounded-tl-none p-3.5 flex items-center space-x-1.5">
+                    <span className="text-xs text-slate-400 font-medium">Gemini is analyzing</span>
                     <span className="flex space-x-1">
                       <span className="h-1.5 w-1.5 bg-cyan-400 rounded-full animate-bounce delay-100" />
                       <span className="h-1.5 w-1.5 bg-blue-400 rounded-full animate-bounce delay-200" />
@@ -193,8 +193,8 @@ export default function GeminiBot() {
             </div>
 
             {/* Quick replies */}
-            <div className="p-3 border-t border-white/5 bg-navy-dark/30 space-y-2">
-              <span className="text-[9px] uppercase tracking-widest text-slate-500 font-bold px-1">
+            <div className="p-3 border-t border-white/5 bg-slate-900 space-y-2">
+              <span className="text-[9px] uppercase tracking-widest text-slate-400 font-bold px-1">
                 Suggested queries
               </span>
               <div className="flex flex-col space-y-1.5">
@@ -216,7 +216,7 @@ export default function GeminiBot() {
                 e.preventDefault();
                 handleSendMessage(inputValue);
               }}
-              className="p-3 border-t border-white/5 bg-navy-dark/60 flex items-center space-x-2"
+              className="p-3 border-t border-white/5 bg-slate-950 flex items-center space-x-2"
             >
               <input
                 type="text"
